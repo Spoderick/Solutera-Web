@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutera - Soluciones en Cobranza</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Raleway:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <!-- Placeholder for icons, relying on CSS for shapes if needed or font awesome if user has key, trying basic SVGs for now in code to be safe -->
+</head>
+
+<body>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Solutera Logo">
+            </a>
+            <button class="mobile-menu-btn" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="#about-us" class="nav-link">Nuestra Empresa</a></li>
+                <li><a href="#services" class="nav-link">Servicios</a></li>
+                <li><a href="#team" class="nav-link">Únete al equipo</a></li>
+                <li><a href="#contact" class="btn-glass">Contacto</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-btn" aria-label="Cambiar Tema">
+                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" style="display:none;">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-bg">
+            <div id="waves-container"></div>
+            <div class="overlay"></div>
+        </div>
+
+
+
+        <div class="container hero-content">
+            <div class="hero-icon-wrapper animate-fade-up">
+                <img src="hero-icon.png" alt="Solutera Icon" class="hero-icon-img">
+            </div>
+            <h1 class="animate-fade-up delay-1">
+                <span class="text-main highlight">Solutera</span>
+            </h1>
+            <p class="animate-fade-up delay-2">Somos una firma independiente con cobertura nacional, dedicados a
+                maximizar el valor de sus carteras mediante estrategias efectivas.</p>
+            <div class="hero-btns animate-fade-up delay-2">
+                <a href="#services" class="btn btn-primary">Nuestros Servicios</a>
+                <a href="#contact" class="btn btn-outline">Contáctanos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about-us" class="section about">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Nuestra Empresa</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">Más de una década de experiencia gestionando activos y brindando soluciones
+                    financieras.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="service-img-wrapper">
+                        <img src="service_recovery.png" alt="Administración y Recuperación">
+                    </div>
+                    <h3>Administración y Recuperación</h3>
+                    <p>Desde 2009 gestionando un portafolio propio de más de 850,000 activos con éxito comprobado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="service-img-wrapper">
+                        <img src="service_tech.png" alt="Infraestructura">
+                    </div>
+                    <h3>Infraestructura</h3>
+                    <p>Tecnología de punta capaz de procesar tareas simultáneas y soportar hasta 2,500 usuarios.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="service-img-wrapper">
+                        <img src="service_security.png" alt="Análisis y Supervisión">
+                    </div>
+                    <h3>Análisis y Supervisión</h3>
+                    <p>Estricto control de seguridad y desempeño para evitar malversación de datos y garantizar
+                        confianza.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="service-img-wrapper">
+                        <img src="service_investment.png" alt="Inversión">
+                    </div>
+                    <h3>Inversión</h3>
+                    <p>Alianzas estratégicas proveyendo capital humano, tecnología y know-how especializado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="service-img-wrapper">
+                        <img src="service_custom.png" alt="Servicio Personalizado">
+                    </div>
+                    <h3>Servicio Personalizado</h3>
+                    <p>Trajes a la medida con atención eficiente y centrada en las necesidades de cada cliente.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="service-img-wrapper">
+                        <img src="service_scouting.png" alt="Scouting">
+                    </div>
+                    <h3>Scouting</h3>
+                    <p>Búsqueda continua de talento para asegurar los mejores asesores en el área operativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div id="chart-container"></div>
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="services-list">
+                <div class="service-item row">
+                    <div class="service-text">
+                        <h3>Administración de Activos</h3>
+                        <p>Gestión integral de carteras, optimizando la recuperación y manteniendo la relación con los
+                            clientes. Utilizamos estrategias basadas en datos para maximizar el retorno.</p>
+                        <a href="#contact" class="btn-link">Saber más &rarr;</a>
+                    </div>
+                    <div class="service-img">
+                        <!-- Abstract shape or placeholder if no image -->
+                        <img src="service_valuation.png" alt="Valuación de Cartera" class="service-full-img">
+                    </div>
+                </div>
+                <div class="service-item row reverse">
+                    <div class="service-text">
+                        <h3>Cobranza Judicial y Extrajudicial</h3>
+                        <p>Expertos en la recuperación de créditos en todas sus etapas. Nuestro equipo legal y de
+                            negociación asegura resultados efectivos respetando el marco legal.</p>
+                        <a href="#contact" class="btn-link">Saber más &rarr;</a>
+                    </div>
+                    <div class="service-img">
+                        <img src="service_legal.png" alt="Cobranza Judicial" class="service-full-img">
+                    </div>
+                </div>
+                <div class="service-item row">
+                    <div class="service-text">
+                        <h3>Contact Center</h3>
+                        <p>Infraestructura robusta para campañas masivas, atención a clientes y seguimiento de cuentas.
+                            Tecnología de marcación predictiva y monitoreo en tiempo real.</p>
+                        <a href="#contact" class="btn-link">Saber más &rarr;</a>
+                    </div>
+                    <div class="service-img">
+                        <img src="service_contact_center.png" alt="Contact Center" class="service-full-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Team -->
+    <section id="team" class="section cta-section">
+        <div class="container text-center">
+            <h2>¿Buscas crecer profesionalmente?</h2>
+            <p>Únete a nuestro equipo y desarrolla tu potencial en un ambiente dinámico y desafiante.</p>
+            <a href="#contact" class="btn btn-primary margin-top">Únete a nosotros</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Contáctanos</h2>
+                    <p>Estamos listos para resolver tus dudas y ofrecerte la mejor solución.</p>
+
+                    <div class="info-item">
+                        <h4>Dirección</h4>
+                        <p>Andes #10 Col. Los Alpes,<br>Alc. Alvaro Obregón, CDMX</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Teléfono</h4>
+                        <p><a href="tel:5563931932">55 6393 1932</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <p><a href="mailto:info@solutera.com">info@solutera.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-form-box">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre *</label>
+                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="4"
+                                placeholder="¿Cómo podemos ayudarte?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-full">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Solutera Logo" class="footer-logo-img">
+                <p>Expertos en soluciones de cobranza y administración de activos.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Inicio</a>
+                <a href="#services">Servicios</a>
+                <a href="http://solutera.com/aviso-de-privacidad.html" target="_blank">Aviso de Privacidad</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 SOLUTERA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h3>¡Mensaje Enviado!</h3>
+            <p>Gracias por contactarnos. Hemos recibido tu mensaje y nos pondremos en contacto contigo a la brevedad.
+            </p>
+            <button id="close-modal-btn" class="btn btn-primary">Entendido</button>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
