@@ -1,5 +1,7 @@
 import { Waves } from './waves.js';
 import { ChartBackground } from './chart-background.js';
+import logoLightUrl from './logo.png';
+import logoDarkUrl from './logo-dark.png';
 
 // Theme Toggle Logic
 const themeBtn = document.getElementById('theme-toggle');
@@ -21,11 +23,11 @@ function updateIcons(theme) {
     if (theme === 'light') {
         sunIcon.style.display = 'none';
         moonIcon.style.display = 'block';
-        if (logoImg) logoImg.src = 'logo-dark.png';
+        if (logoImg) logoImg.src = logoDarkUrl;
     } else {
         sunIcon.style.display = 'block';
         moonIcon.style.display = 'none';
-        if (logoImg) logoImg.src = 'logo.png';
+        if (logoImg) logoImg.src = logoLightUrl;
     }
 }
 
@@ -123,7 +125,9 @@ window.addEventListener('load', () => {
     const loader = document.getElementById('loader-wrapper');
     // Minimum load time of 1 second to show off the animation
     setTimeout(() => {
-        loader.classList.add('loaded');
+        if (loader) {
+            loader.classList.add('loaded');
+        }
         // Enable scrolling or other initializations if needed
     }, 1000);
 });
