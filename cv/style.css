@@ -989,8 +989,8 @@ h6 {
 
     .cert-badge {
         padding: 2rem;
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
         margin: 0 auto;
     }
 
@@ -1005,11 +1005,12 @@ h6 {
     }
 
     .slide {
-        padding: 2rem;
+        padding: 1.5rem;
     }
 
     .glass-panel {
         padding: 1.5rem;
+        max-height: 85vh;
     }
 }
 
@@ -1040,13 +1041,45 @@ h6 {
         top: 1rem;
         bottom: auto;
         left: 1rem;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .theme-toggle {
+        top: 1rem;
+        left: auto;
+        right: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
 
     .slide-title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .gradient-text {
-        font-size: 3rem;
+        font-size: 2.5rem;
+    }
+
+    .glass-panel {
+        padding: 1rem;
+        max-height: 75vh;
+        margin-top: 2rem;
+    }
+
+    .slide {
+        padding: 1rem;
+        padding-bottom: 5rem;
+        /* Space for nav controls */
+    }
+
+    .timeline::before {
+        left: 0.5rem;
+    }
+
+    .timeline-item::before {
+        left: -1.85rem;
     }
 }
