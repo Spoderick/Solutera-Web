@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
 export default defineConfig({
+    base: './',
     build: {
         rollupOptions: {
             input: {
@@ -11,7 +12,6 @@ export default defineConfig({
         }
     },
     server: {
-        // Para asegurar que /cv redirija correctamente a /cv/ o sirva su index.html
         open: false,
     }
 });
