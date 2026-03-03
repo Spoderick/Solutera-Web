@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAC Administración de Activos - Presentación</title>
+    <meta name="description" content="Presentación interactiva de SAC Administración de Activos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div id="background-canvas">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" title="Anterior (Flecha Arriba/Izquierda)"><i
+                class="bi bi-chevron-up"></i></button>
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <button class="nav-btn" id="nextBtn" title="Siguiente (Flecha Abajo/Derecha)"><i
+                class="bi bi-chevron-down"></i></button>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" title="Cambiar Tema">
+        <i class="bi bi-sun-fill" id="themeIcon"></i>
+    </button>
+    <div class="slide-indicator" id="slideIndicator">1 / 15</div>
+
+    <main id="presentation">
+
+        <!-- Diapositiva 1 -->
+        <section class="slide active" id="slide-1">
+            <div class="content hero-slide glass-panel">
+                <img src="logo-sac.png" alt="SAC Administración de Activos" class="fade-in-up logo-main-dark"
+                    style="max-height: 15rem; margin-bottom: 2rem; width: auto; object-fit: contain;">
+                <img src="Logo-sac-dark.png" alt="SAC Administración de Activos" class="fade-in-up logo-main-light"
+                    style="max-height: 15rem; margin-bottom: 2rem; width: auto; object-fit: contain; display: none;">
+                <p class="subtitle fade-in-up delay-1">Expertos en soluciones integrales de cobranza y administración de
+                    cartera</p>
+                <button class="pulse-btn mt-6" onclick="nextSlide()">Comenzar Presentación <i
+                        class="bi bi-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Diapositiva 2 -->
+        <section class="slide" id="slide-2">
+            <div class="content glass-panel split-layout">
+                <div class="text-side">
+                    <h2 class="slide-title">SAC Administración de Activos</h2>
+                    <div class="module fade-in-up delay-1">
+                        <h3><i class="bi bi-people-fill text-accent"></i> Quiénes Somos</h3>
+                        <p>Grupo independiente de expertos en soluciones integrales de cobranza y administración de
+                            cartera, establecido en 2009.</p>
+                    </div>
+                    <div class="module fade-in-up delay-2">
+                        <h3><i class="bi bi-heart-fill text-accent"></i> Satisfacción del Cliente</h3>
+                        <p>Nuestro enfoque principal es asegurar la satisfacción de nuestros clientes a través de
+                            soluciones efectivas y transparentes.</p>
+                    </div>
+                </div>
+                <div class="cards-side grid-2x2">
+                    <div class="glass-card fade-in-up delay-3">
+                        <i class="bi bi-briefcase"></i>
+                        <h4>Nuestros Servicios</h4>
+                        <ul>
+                            <li>Administración de Cartera</li>
+                            <li>Cobranza Judicial y Extrajudicial</li>
+                            <li>Seguimiento de Cuentas</li>
+                            <li>Contact Center y Atención</li>
+                        </ul>
+                    </div>
+                    <div class="glass-card fade-in-up delay-4">
+                        <i class="bi bi-bullseye"></i>
+                        <h4>Estrategias Personalizadas</h4>
+                        <p>Diseñamos estrategias claras, medibles y bien planeadas, adaptadas a cada cliente.</p>
+                    </div>
+                    <div class="glass-card full-width fade-in-up delay-5">
+                        <i class="bi bi-cpu"></i>
+                        <h4>Infraestructura Innovadora</h4>
+                        <p>Respaldamos nuestras operaciones con tecnología de punta y un profundo conocimiento del
+                            mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 3 -->
+        <section class="slide" id="slide-3">
+            <div class="content glass-panel center-layout">
+                <h2 class="slide-title">¿Quiénes Somos? Historia y Evolución</h2>
+                <div class="timeline mt-6">
+                    <div class="timeline-item mt-4 fade-in-up delay-1">
+                        <div class="year">2009</div>
+                        <div class="desc">
+                            <h4>Fundación</h4>
+                            <p>SAC Administración de Activos nació para satisfacer una demanda creciente en el mercado,
+                                especializándose en la recuperación de cartera. Nos desarrollamos como expertos en
+                                recuperación de cartera sin descuidar la cartera propia.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item mt-4 fade-in-up delay-2">
+                        <div class="year">2016</div>
+                        <div class="desc">
+                            <h4>Reestructuración y Expansión</h4>
+                            <p>La empresa se reestructuró para incorporar el seguimiento de cuentas de servicio e
+                                información, así como la mediación para cuentas hipotecarias.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item mt-4 fade-in-up delay-3">
+                        <div class="year">Actualidad</div>
+                        <div class="desc">
+                            <h4>Liderazgo</h4>
+                            <p>Somos una empresa en constante crecimiento, con liderazgo y expertos en soluciones y
+                                procesos de cobranza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 4 -->
+        <section class="slide" id="slide-4">
+            <div class="content glass-panel">
+                <h2 class="slide-title">Experiencia y Portafolio</h2>
+
+                <div class="stats-grid mt-4">
+                    <div class="stat-card fade-in-up delay-1">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Años de experiencia</div>
+                    </div>
+                    <div class="stat-card fade-in-up delay-2">
+                        <div class="stat-number">65+</div>
+                        <div class="stat-label">Clientes atendidos</div>
+                    </div>
+                    <div class="stat-card fade-in-up delay-3">
+                        <div class="stat-number">3M+</div>
+                        <div class="stat-label">Activos Portafolio Propio</div>
+                        <p class="stat-detail">Bancomer, HSBC, Volkswagen</p>
+                    </div>
+                    <div class="stat-card fade-in-up delay-4">
+                        <div class="stat-number">2.5M+</div>
+                        <div class="stat-label">Activos de Terceros</div>
+                    </div>
+                </div>
+
+                <div class="clients-marquee fade-in-up delay-5 mt-6">
+                    <h4>Nuestros principales clientes y socios</h4>
+                    <div class="client-list">
+                        <img src="logos companies/BBVA logo.png" alt="BBVA">
+                        <img src="logos companies/Logo_de_Fonacot.svg.png" alt="Fonacot">
+                        <img src="logos companies/Sicrea-logo.webp" alt="Sicrea">
+                        <img src="logos companies/afirme.svg" alt="Afirme">
+                        <img src="logos companies/afluenta logo.png" alt="Afluenta">
+                        <img src="logos companies/agro logo.png" alt="Agro">
+                        <img src="logos companies/bam logo.png" alt="Bam">
+                        <img src="logos companies/banca mifel logo.png" alt="Banca Mifel">
+                        <img src="logos companies/banorte logo.png" alt="Banorte">
+                        <img src="logos companies/bim logo.png" alt="Bim">
+                        <img src="logos companies/creditea logo.png" alt="Creditea">
+                        <img src="logos companies/credito facil logo.png" alt="Credito Facil">
+                        <img src="logos companies/cya logo.png" alt="C&A">
+                        <img src="logos companies/exitus logo.png" alt="Exitus">
+                        <img src="logos companies/famsa logo.png" alt="Famsa">
+                        <img src="logos companies/fovisste logo.png" alt="Fovissste">
+                        <img src="logos companies/homex logo.png" alt="Homex">
+                        <img src="logos companies/metro financiera.svg" alt="Metro Financiera">
+                        <img src="logos companies/mexdam logo.png" alt="Mexdam">
+                        <img src="logos companies/operax logo.png" alt="Operax">
+                        <img src="logos companies/santander logo.png" alt="Santander">
+                        <img src="logos companies/sif logo.png" alt="SIF">
+                        <img src="logos companies/sky logo.png" alt="Sky">
+                        <img src="logos companies/suauto logo.png" alt="Suauto">
+                        <img src="logos companies/zendere logo.png" alt="Zendere">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 5 -->
+        <section class="slide" id="slide-5">
+            <div class="content glass-panel split-layout">
+                <div class="text-side">
+                    <h2 class="slide-title">Fortalezas y Certificaciones</h2>
+                    <div class="card fade-in-up delay-1">
+                        <h3><i class="bi bi-graph-up-arrow text-accent"></i> Business Intelligence (BI)</h3>
+                        <p>Nuestra principal fortaleza. Permite crear estrategias eficientes mediante análisis
+                            detallados de cada cartera, mercado y situación particular.</p>
+                    </div>
+                    <div class="card mt-4 fade-in-up delay-2">
+                        <h3><i class="bi bi-gear-wide-connected text-accent"></i> Innovación Constante</h3>
+                        <p>En constante búsqueda de nuevos procesos para mejorar la calidad utilizando una
+                            infraestructura de sistemas y tecnología de punta.</p>
+                    </div>
+                </div>
+                <div class="cert-side flex-center fade-in-up delay-3">
+                    <div class="cert-badge">
+                        <i class="bi bi-award-fill"></i>
+                        <h3>ISO 9001:2015</h3>
+                        <p>Certificación en la norma NMX-CC-9001-IMNC-2015 sobre Sistemas de Gestión de la Calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 6 -->
+        <section class="slide" id="slide-6">
+            <div class="content glass-panel mx-auto max-w-lg">
+                <h2 class="slide-title text-center">Seguridad de la Información</h2>
+                <div class="security-grid mt-6">
+                    <div class="sec-item fade-in-up delay-1">
+                        <i class="bi bi-cloud-check"></i>
+                        <h4>Servicios en Nube</h4>
+                        <p>Altos estándares de seguridad, protegidos acorde a normativas oficiales.</p>
+                    </div>
+                    <div class="sec-item fade-in-up delay-2">
+                        <i class="bi bi-shield-lock"></i>
+                        <h4>Protección Local</h4>
+                        <p>Sistemas de seguridad biométricos y circuito de cámaras CCTV.</p>
+                    </div>
+                    <div class="sec-item fade-in-up delay-3">
+                        <i class="bi bi-hdd-network"></i>
+                        <h4>Red Protegida</h4>
+                        <p>Monitoreada por nuestro experto personal de Sistemas y TI, salvaguardando cada punto.</p>
+                    </div>
+                    <div class="sec-item fade-in-up delay-4">
+                        <i class="bi bi-patch-check"></i>
+                        <h4>Alta Calidad</h4>
+                        <p>Nuestras herramientas, oficinas y personal brindan cobertura personalizable con la más alta
+                            seguridad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 7 -->
+        <section class="slide" id="slide-7">
+            <div class="content glass-panel">
+                <h2 class="slide-title">Servicios Ofrecidos</h2>
+                <p class="text-center mb-6" style="color:var(--text-muted)">Una gama completa de servicios adaptables a
+                    las necesidades de cada cliente:</p>
+                <div class="services-grid">
+                    <div class="service-box fade-in-up delay-1">
+                        <i class="bi bi-bank"></i>
+                        <span>Cobranza Extrajudicial y Judicial</span>
+                    </div>
+                    <div class="service-box fade-in-up delay-2">
+                        <i class="bi bi-geo-alt"></i>
+                        <span>Gestión Domiciliaria</span>
+                    </div>
+                    <div class="service-box fade-in-up delay-3">
+                        <i class="bi bi-headset"></i>
+                        <span>Ventas y Telemarketing</span>
+                    </div>
+                    <div class="service-box fade-in-up delay-4">
+                        <i class="bi bi-person-lines-fill"></i>
+                        <span>Atención a Clientes</span>
+                    </div>
+                    <div class="service-box fade-in-up delay-5">
+                        <i class="bi bi-laptop"></i>
+                        <span>Desarrollo de CRM a medida</span>
+                    </div>
+                    <div class="service-box fade-in-up delay-6">
+                        <i class="bi bi-briefcase"></i>
+                        <span>Mediación</span>
+                    </div>
+                    <div class="service-box fade-in-up delay-7 full-width">
+                        <i class="bi bi-bar-chart-steps"></i>
+                        <span>Encuestas e Investigación de Mercado</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 8 -->
+        <section class="slide" id="slide-8">
+            <div class="content glass-panel">
+                <h2 class="slide-title">Fases de la Cobranza</h2>
+                <p class="mb-4">Detalle del Servicio de Cobranza en 3 etapas fundamentales:</p>
+
+                <div class="phases-container">
+                    <div class="phase-card fade-in-up delay-1">
+                        <div class="phase-number">01</div>
+                        <h3>Preventiva</h3>
+                        <p>Se utilizan modelos predictivos para identificar perfiles de alto riesgo y se contacta a los
+                            clientes antes de que el crédito entre en mora para "contención".</p>
+                    </div>
+
+                    <div class="phase-card fade-in-up delay-2">
+                        <div class="phase-number">02</div>
+                        <h3>Administrativa</h3>
+                        <p>Enfocada en créditos con moras desde 30 días hasta 12 meses, aunque en carteras propias se
+                            manejan antigüedades superiores a 5 años.</p>
+                    </div>
+
+                    <div class="phase-card fade-in-up delay-3">
+                        <div class="phase-number">03</div>
+                        <h3>Pre-judicial y Judicial</h3>
+                        <p>Para deudores con garantías reales, se gestiona el proceso completo, desde la presentación de
+                            la demanda hasta la adjudicación.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 9 -->
+        <section class="slide" id="slide-9">
+            <div class="content glass-panel max-w-lg">
+                <h2 class="slide-title">Productos Gestionados & Equipo</h2>
+
+                <div class="fade-in-up delay-1 info-box mb-6">
+                    <h3 class="flex items-center"><i class="bi bi-collection text-accent mr-2"></i> Experiencia Integral
+                    </h3>
+                    <p>La experiencia de SAC abarca todos los tipos de productos financieros: <strong
+                            class="text-white">Consumo, Comercial, Automotriz e Hipotecario.</strong></p>
+                </div>
+
+                <div class="team-hierarchy">
+                    <h4 class="mb-4 font-bold text-lg"><i class="bi bi-diagram-3"></i> Equipo de Cobranza Extrajudicial
+                    </h4>
+                    <ul class="team-list">
+                        <li class="fade-in-up delay-2"><i class="bi bi-person-badge"></i> <strong>Gerente y Coordinador
+                                Operativo:</strong> Implementan y dirigen las estrategias.</li>
+                        <li class="fade-in-up delay-3"><i class="bi bi-person-check"></i> <strong>Supervisor Operativo y
+                                Administ.:</strong> Mantienen la calidad y gestionan la documentación.</li>
+                        <li class="fade-in-up delay-4"><i class="bi bi-truck"></i> <strong>Coordinador y Gestores
+                                Domiciliarios:</strong> Realizan las estrategias de campo.</li>
+                        <li class="fade-in-up delay-5"><i class="bi bi-activity"></i> <strong>WFM (Workforce
+                                Management):</strong> Analiza la cartera y la efectividad de las herramientas.</li>
+                        <li class="fade-in-up delay-6"><i class="bi bi-telephone"></i> <strong>Gestores
+                                Operativos/Telefónicos:</strong> Con experiencia en cobranza.</li>
+                        <li class="fade-in-up delay-7"><i class="bi bi-pc-display"></i> <strong>Sistemas:</strong>
+                            Gestiona datos, métricas y mantenimiento.</li>
+                        <li class="fade-in-up delay-8"><i class="bi bi-star"></i> <strong>Calidad:</strong> Control y
+                            seguimiento de procesos y políticas.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 10 -->
+        <section class="slide" id="slide-10">
+            <div class="content glass-panel split-layout">
+                <div class="text-side">
+                    <h2 class="slide-title">Servicio de Mediación</h2>
+                    <p class="lead fade-in-up delay-1">Un método alternativo para la solución de conflictos que evita
+                        llegar a una instancia judicial. Las partes construyen su propio acuerdo con un mediador.</p>
+                </div>
+                <div class="steps-side">
+                    <h3 class="mb-4 font-bold text-lg fade-in-up delay-2">Proceso:</h3>
+                    <ol class="custom-counter">
+                        <li class="fade-in-up delay-3">Contactar al cliente y solicitar la documentación.</li>
+                        <li class="fade-in-up delay-4">Revisar los documentos y entregarlos al mediador.</li>
+                        <li class="fade-in-up delay-5">Aclarar dudas sobre el convenio.</li>
+                        <li class="fade-in-up delay-6">Firmar el convenio.</li>
+                        <li class="fade-in-up delay-7">Inscribir el convenio ante el Centro de Justicia Alternativa
+                            (CJA) o un notario.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 11 -->
+        <section class="slide" id="slide-11">
+            <div class="content glass-panel split-layout">
+                <div class="text-side">
+                    <h2 class="slide-title">Equipo y Entregables (Mediación)</h2>
+                    <h3 class="mt-4"><i class="bi bi-people text-accent"></i> Equipo</h3>
+                    <ul class="icon-list mt-2">
+                        <li class="fade-in-up delay-1"><i class="bi bi-check2"></i> <strong>Coordinador:</strong> Diseña
+                            las estrategias.</li>
+                        <li class="fade-in-up delay-2"><i class="bi bi-check2"></i> <strong>Mesa de Control:</strong>
+                            Revisa los documentos.</li>
+                        <li class="fade-in-up delay-3"><i class="bi bi-check2"></i> <strong>Ejecutivos:</strong> Con
+                            experiencia en el área.</li>
+                        <li class="fade-in-up delay-4"><i class="bi bi-check2"></i> <strong>Mediador
+                                Certificado:</strong> Avalado por institución o Poder Judicial.</li>
+                    </ul>
+                </div>
+                <div class="perks-side">
+                    <div class="glass-card mb-4 fade-in-up delay-5">
+                        <h4 class="text-accent"><i class="bi bi-lightning-charge"></i> Ventajas</h4>
+                        <p>Solución rápida y segura, evitando costos judiciales. En caso de incumplimiento, el convenio
+                            tiene efecto de "cosa juzgada".</p>
+                    </div>
+                    <div class="glass-card fade-in-up delay-6">
+                        <h4 class="text-accent"><i class="bi bi-box-seam"></i> Entregables</h4>
+                        <p>Dictamen general con reporte fotográfico y geolocalización, expediente físico/digital, y
+                            reestructura firmada y registrada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 12 -->
+        <section class="slide" id="slide-12">
+            <div class="content glass-panel">
+                <h2 class="slide-title text-center">Tecnología y Canales de Contacto</h2>
+                <h3 class="text-center mb-6 text-muted">Plataforma Omnicanal y Sistemas</h3>
+
+                <div class="tech-grid">
+                    <div class="tech-card fade-in-up delay-1">
+                        <div class="tech-icon"><i class="bi bi-telephone-outbound"></i></div>
+                        <h4>Voz</h4>
+                        <p>Capacidad para 500+ usuarios, marcadores predictivos, grabación 100%, IVR y robots.</p>
+                    </div>
+                    <div class="tech-card fade-in-up delay-2">
+                        <div class="tech-icon"><i class="bi bi-chat-dots"></i></div>
+                        <h4>Comunicación Digital</h4>
+                        <p>WhatsApp, SMS, Email, Chat (tradicional y bots) y Redes Sociales.</p>
+                    </div>
+                    <div class="tech-card fade-in-up delay-3">
+                        <div class="tech-icon"><i class="bi bi-person-walking"></i></div>
+                        <h4>Canales Físicos</h4>
+                        <p>Visitas domiciliarias y correo tradicional (carteo).</p>
+                    </div>
+                    <div class="tech-card fade-in-up delay-4">
+                        <div class="tech-icon"><i class="bi bi-laptop"></i></div>
+                        <h4>Sistemas Creados</h4>
+                        <p>CRM Personalizado. Servidores físicos y nube para hasta 2,500 usuarios.</p>
+                    </div>
+                    <div class="tech-card full-width fade-in-up delay-5">
+                        <div class="tech-icon"><i class="bi bi-shield-check"></i></div>
+                        <h4>Seguridad y Monitoreo</h4>
+                        <p>Uso de Teramind, información encriptada, biométricos y cámaras CCTV.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 13 -->
+        <section class="slide" id="slide-13">
+            <div class="content glass-panel split-layout">
+                <div class="text-side flex flex-col justify-center">
+                    <h2 class="slide-title">Gestión Domiciliaria y Localización</h2>
+                    <p class="lead fade-in-up delay-1 mb-4">Herramientas poderosas para el trabajo de campo y rastreo de
+                        clientes.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <div class="glass-card fade-in-up delay-2">
+                        <h3 class="flex items-center text-accent"><i class="bi bi-geo-alt-fill mr-2"></i> Sistema de
+                            Visitas</h3>
+                        <p>Seguimiento y control en tiempo real que permite obtener geolocalización (offline
+                            disponible), fotografías, hora y resultado de la visita.</p>
+                    </div>
+                    <div class="glass-card fade-in-up delay-3">
+                        <h3 class="flex items-center text-accent"><i class="bi bi-search mr-2"></i> Localización de
+                            Clientes</h3>
+                        <p>Proceso diseñado para cuentas ilocalizables mediante búsqueda en diferentes medios y
+                            validación/depuración de números telefónicos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 14 -->
+        <section class="slide" id="slide-14">
+            <div class="content glass-panel mx-auto max-w-lg">
+                <h2 class="slide-title text-center">Contact Center Virtual (Home Office)</h2>
+                <p class="text-center mb-6">Modelo de trabajo remoto altamente controlado</p>
+
+                <div class="ho-features grid-2x2">
+                    <div class="ho-feat fade-in-up delay-1">
+                        <i class="bi bi-camera-video"></i>
+                        <h4>Monitoreo en Tiempo Real</h4>
+                        <p>Cuarto de control para KPIs y cámaras de los ejecutivos.</p>
+                    </div>
+                    <div class="ho-feat fade-in-up delay-2">
+                        <i class="bi bi-diagram-2"></i>
+                        <h4>Sistemas Integrados</h4>
+                        <p>Control total de llamadas, SMS, email y CRM.</p>
+                    </div>
+                    <div class="ho-feat fade-in-up delay-3">
+                        <i class="bi bi-shield-lock"></i>
+                        <h4>Seguridad</h4>
+                        <p>Acceso remoto para supervisión y políticas estrictas (PLD y ética).</p>
+                    </div>
+                    <div class="ho-feat fade-in-up delay-4">
+                        <i class="bi bi-mortarboard"></i>
+                        <h4>Capacitación</h4>
+                        <p>Requisito de paso por contact center físico antes del trabajo remoto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 15 -->
+        <section class="slide" id="slide-15">
+            <div class="content glass-panel flex flex-col items-center justify-center text-center">
+                <h2 class="slide-title w-full text-center">Instalaciones y Contacto</h2>
+
+                <div class="contact-box fade-in-up delay-1 mt-6 p-6 glass-card inline-block">
+                    <i class="bi bi-building text-3xl text-accent mb-2"></i>
+                    <h3 class="text-xl mb-2">Sede Principal</h3>
+                    <p>Andes No. 10, Col. Los Alpes, C.P. 01010<br>Del. Álvaro Obregón, Ciudad de México.</p>
+                </div>
+
+                <div class="contacts-wrapper flex gap-6 mt-8 w-full justify-center flex-wrap">
+                    <div class="contact-person glass-card fade-in-up delay-2 text-left">
+                        <h4 class="font-bold text-lg mb-1">Lic. Jorge Arturo López del Rincón</h4>
+                        <p class="text-accent text-sm mb-3">Socio Director</p>
+                        <p><i class="bi bi-envelope"></i> jorgelopez@sacactivos.com</p>
+                        <p><i class="bi bi-telephone"></i> 55 6393 1936</p>
+                        <p><i class="bi bi-phone"></i> 55 5072 3826</p>
+                    </div>
+                    <div class="contact-person glass-card fade-in-up delay-3 text-left">
+                        <h4 class="font-bold text-lg mb-1">Lic. Mauricio Herrera</h4>
+                        <p class="text-accent text-sm mb-3">Socio Director Administrativo</p>
+                        <p><i class="bi bi-envelope"></i> admon@sacactivos.com</p>
+                        <p><i class="bi bi-telephone"></i> 55 6393 1935</p>
+                        <p><i class="bi bi-phone"></i> 55 1043 4379</p>
+                    </div>
+                </div>
+
+                <button class="pulse-btn mt-8 fade-in-up delay-4" onclick="goToSlide(0)"><i
+                        class="bi bi-arrow-up-circle"></i> Volver al Inicio</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
