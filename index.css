@@ -858,6 +858,11 @@ ul {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+[data-theme="light"] .footer {
+    background: var(--bg-card);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .footer-content {
     display: flex;
     flex-direction: column;
@@ -893,6 +898,10 @@ ul {
     color: #525252;
     font-size: 0.85rem;
     margin-top: 20px;
+}
+
+[data-theme="light"] .copyright {
+    color: var(--text-secondary);
 }
 
 
