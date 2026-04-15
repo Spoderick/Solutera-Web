@@ -14,6 +14,7 @@ export class ChartBackground {
             ...options
         };
 
+        this.isVisible = true;
         this.init();
     }
 
@@ -22,9 +23,6 @@ export class ChartBackground {
         // Dimensions
         this.width = this.container.offsetWidth;
         this.height = this.container.offsetHeight;
-
-        // Debug
-        console.log('Chart container dimensions:', this.width, this.height);
 
         this.svg = d3.select(this.container)
             .append('svg')
@@ -38,7 +36,16 @@ export class ChartBackground {
 
         this.draw();
 
+        // Visibility tracking
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                this.isVisible = entry.isIntersecting;
+            });
+        }, { threshold: 0.1 });
+        this.observer.observe(this.container);
+
         window.addEventListener('resize', () => {
+            if (!this.isVisible) return;
             this.width = this.container.offsetWidth;
             this.height = this.container.offsetHeight;
             this.draw();
@@ -66,6 +73,8 @@ export class ChartBackground {
         const margin = { top: 0, right: 0, bottom: 0, left: 0 };
         const width = this.width - margin.left - margin.right;
         const height = this.height - margin.top - margin.bottom;
+
+        if (width <= 0 || height <= 0) return;
 
         // X Scale
         const x = d3.scaleTime()

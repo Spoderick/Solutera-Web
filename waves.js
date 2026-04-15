@@ -13,10 +13,13 @@ export class Waves {
             ...options
         };
 
-        this.svg = null;
+        this.canvas = null;
+        this.ctx = null;
+        this.pixelRatio = window.devicePixelRatio || 1;
+        
         this.mouse = {
-            x: -10,
-            y: 0,
+            x: -1000,
+            y: -1000,
             lx: 0,
             ly: 0,
             sx: 0,
@@ -26,25 +29,25 @@ export class Waves {
             a: 0,
             set: false,
         };
-        this.paths = [];
-        this.ledPaths = []; // Separate paths for the "LED" effect
         this.lines = [];
+        this.lineStyles = []; // Store dash styles for each line
         this.noise = null;
         this.rafId = null;
         this.bounding = null;
         this.time = 0;
+        this.isVisible = true;
 
         this.init();
     }
 
     init() {
-        // Create SVG element
-        this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        this.svg.classList.add('js-svg');
-        this.svg.style.display = 'block';
-        this.svg.style.width = '100%';
-        this.svg.style.height = '100%';
-        this.container.appendChild(this.svg);
+        // Create Canvas element
+        this.canvas = document.createElement('canvas');
+        this.canvas.style.display = 'block';
+        this.canvas.style.width = '100%';
+        this.canvas.style.height = '100%';
+        this.ctx = this.canvas.getContext('2d');
+        this.container.appendChild(this.canvas);
 
         // Initialize noise
         this.noise = createNoise2D();
@@ -52,6 +55,17 @@ export class Waves {
         // Initial setup
         this.setSize();
         this.setLines();
+
+        // Visibility tracking
+        this.observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                this.isVisible = entry.isIntersecting;
+                if (this.isVisible && !this.rafId) {
+                    this.tick();
+                }
+            });
+        }, { threshold: 0.1 });
+        this.observer.observe(this.container);
 
         // Events
         window.addEventListener('resize', this.onResize.bind(this));
@@ -63,22 +77,19 @@ export class Waves {
 
     setSize() {
         this.bounding = this.container.getBoundingClientRect();
+        this.canvas.width = this.bounding.width * this.pixelRatio;
+        this.canvas.height = this.bounding.height * this.pixelRatio;
+        this.ctx.scale(this.pixelRatio, this.pixelRatio);
     }
 
     setLines() {
-        if (!this.svg || !this.bounding) return;
+        if (!this.ctx || !this.bounding) return;
 
         const { width, height } = this.bounding;
         this.lines = [];
+        this.lineStyles = [];
 
-        // Clear existing
-        while (this.svg.firstChild) {
-            this.svg.removeChild(this.svg.firstChild);
-        }
-        this.paths = [];
-        this.ledPaths = [];
-
-        const xGap = 15; // Slightly wider for performance
+        const xGap = 15;
         const yGap = 15;
 
         const oWidth = width + 200;
@@ -101,36 +112,12 @@ export class Waves {
                 });
             }
             this.lines.push(points);
-
-            // 1. Base Line (White)
-            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            path.setAttribute('fill', 'none');
-            path.setAttribute('stroke', this.options.strokeColor);
-            path.setAttribute('stroke-width', '1');
-            path.setAttribute('opacity', '0.3'); // Faint base line
-            this.svg.appendChild(path);
-            this.paths.push(path);
-
-            // 2. LED Line (Blue) - Reduced opacity and visibility
-            const ledPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            ledPath.setAttribute('fill', 'none');
-            // Use RGBA for transparency
-            ledPath.setAttribute('stroke', 'rgba(255, 107, 0, 0.3)'); // Much lower opacity
-            ledPath.setAttribute('stroke-width', '1.5'); // Slightly thinner
-
-            // "Tiras led": Dashed lines that move
-            // Dash array: 100px dash, 300px gap
-            ledPath.setAttribute('stroke-dasharray', `${50 + Math.random() * 50} ${300 + Math.random() * 200}`);
-
-            // Random start offset so they aren't synchronized
-            ledPath.style.strokeDashoffset = `${Math.random() * 1000}`;
-
-            // Add glow effect using filter or simpler css shadow (SVG filter is expensive, try simple stroke first)
-            // Or we can add a simple glow filter to the SVG defs later. 
-            // For now, let's rely on the color contrast.
-
-            this.svg.appendChild(ledPath);
-            this.ledPaths.push(ledPath);
+            
+            // Generate styles for this line (LED effect)
+            this.lineStyles.push({
+                dashArray: [50 + Math.random() * 50, 300 + Math.random() * 200],
+                dashOffset: Math.random() * 1000
+            });
         }
     }
 
@@ -158,12 +145,13 @@ export class Waves {
     }
 
     movePoints(time) {
-        const lines = this.lines;
         const mouse = this.mouse;
         const noise = this.noise;
 
-        lines.forEach((points) => {
-            points.forEach((p) => {
+        for (let i = 0; i < this.lines.length; i++) {
+            const points = this.lines[i];
+            for (let j = 0; j < points.length; j++) {
+                const p = points[j];
                 const move = noise(
                     (p.x + time * 0.008) * 0.003,
                     (p.y + time * 0.003) * 0.002
@@ -192,8 +180,8 @@ export class Waves {
 
                 p.cursor.x += p.cursor.vx;
                 p.cursor.y += p.cursor.vy;
-            });
-        });
+            }
+        }
     }
 
     moved(point, withCursorForce = true) {
@@ -204,31 +192,67 @@ export class Waves {
     }
 
     drawLines() {
-        this.lines.forEach((points, i) => {
-            if (points.length < 2 || !this.paths[i]) return;
+        const ctx = this.ctx;
+        const width = this.bounding.width;
+        const height = this.bounding.height;
 
+        ctx.clearRect(0, 0, width, height);
+
+        // 1. Draw Base Lines (White/Faint)
+        ctx.strokeStyle = this.options.strokeColor;
+        ctx.lineWidth = 1;
+        ctx.globalAlpha = 0.15;
+        ctx.setLineDash([]); // Plain lines
+
+        for (let i = 0; i < this.lines.length; i++) {
+            const points = this.lines[i];
+            if (points.length < 2) continue;
+
+            ctx.beginPath();
             const firstPoint = this.moved(points[0], false);
-            let d = `M ${firstPoint.x} ${firstPoint.y}`;
+            ctx.moveTo(firstPoint.x, firstPoint.y);
 
             for (let j = 1; j < points.length; j++) {
-                const current = this.moved(points[j]);
-                d += `L ${current.x} ${current.y}`;
+                const p = this.moved(points[j]);
+                ctx.lineTo(p.x, p.y);
             }
+            ctx.stroke();
+        }
 
-            // Update base path
-            this.paths[i].setAttribute('d', d);
+        // 2. Draw LED Lines (Orange/Glow)
+        ctx.strokeStyle = 'rgba(255, 107, 0, 0.4)';
+        ctx.lineWidth = 1.5;
+        ctx.globalAlpha = 1.0;
 
-            // Update LED path
-            this.ledPaths[i].setAttribute('d', d);
+        for (let i = 0; i < this.lines.length; i++) {
+            const points = this.lines[i];
+            const style = this.lineStyles[i];
+            if (points.length < 2) continue;
 
-            // Animate LED "flow"
-            // We subtract from the offset to make it move "down" or "along" the line
-            const currentOffset = parseFloat(this.ledPaths[i].style.strokeDashoffset) || 0;
-            this.ledPaths[i].style.strokeDashoffset = currentOffset - 2; // Speed of LED
-        });
+            // Update dash offset
+            style.dashOffset -= 2;
+
+            ctx.setLineDash(style.dashArray);
+            ctx.lineDashOffset = style.dashOffset;
+
+            ctx.beginPath();
+            const firstPoint = this.moved(points[0], false);
+            ctx.moveTo(firstPoint.x, firstPoint.y);
+
+            for (let j = 1; j < points.length; j++) {
+                const p = this.moved(points[j]);
+                ctx.lineTo(p.x, p.y);
+            }
+            ctx.stroke();
+        }
     }
 
     tick() {
+        if (!this.isVisible) {
+            this.rafId = null;
+            return;
+        }
+
         this.time += 1;
 
         // Mouse smoothing
