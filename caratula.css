@@ -1,0 +1,109 @@
+:root {
+    --bg-deep: #050a1f;
+    --bg-accent: #0e153a;
+    --text-gold: #ffffff; /* Keeping it white as requested, maybe slight tint */
+    --accent-glow: rgba(56, 189, 248, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#animation-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.logo-wrapper {
+    width: 250px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    max-width: 1000px;
+    line-height: 1.6;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.divider {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(255, 107, 0, 0.8), transparent);
+    margin-top: 1rem;
+    box-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 0.2rem;
+        padding: 0 20px;
+    }
+    
+    .logo-wrapper {
+        width: 180px;
+    }
+}
