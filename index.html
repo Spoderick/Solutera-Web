@@ -64,7 +64,7 @@
 
         <div class="container hero-content">
             <div class="hero-icon-wrapper animate-fade-up">
-                <img src="hero-icon.png" alt="Solutera Icon" class="hero-icon-img">
+                <img id="hero-logo-trigger" src="hero-icon.png" alt="Solutera Icon" class="hero-icon-img">
             </div>
             <h1 class="animate-fade-up delay-1">
                 <span class="text-main highlight">Solutera</span>
@@ -78,164 +78,386 @@
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about-us" class="section about">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Nuestra Empresa</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">Más de una década de experiencia gestionando activos y brindando soluciones
-                    financieras.</p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="service-img-wrapper">
-                        <img src="service_recovery.png" alt="Administración y Recuperación">
-                    </div>
-                    <h3>Administración y Recuperación</h3>
-                    <p>Desde 2009 gestionando un portafolio propio de más de 850,000 activos con éxito comprobado.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="service-img-wrapper">
-                        <img src="service_tech.png" alt="Infraestructura">
-                    </div>
-                    <h3>Infraestructura</h3>
-                    <p>Tecnología de punta capaz de procesar tareas simultáneas y soportar hasta 2,500 usuarios.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="service-img-wrapper">
-                        <img src="service_security.png" alt="Análisis y Supervisión">
-                    </div>
-                    <h3>Análisis y Supervisión</h3>
-                    <p>Estricto control de seguridad y desempeño para evitar malversación de datos y garantizar
-                        confianza.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="service-img-wrapper">
-                        <img src="service_investment.png" alt="Inversión">
-                    </div>
-                    <h3>Inversión</h3>
-                    <p>Alianzas estratégicas proveyendo capital humano, tecnología y know-how especializado.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="service-img-wrapper">
-                        <img src="service_custom.png" alt="Servicio Personalizado">
-                    </div>
-                    <h3>Servicio Personalizado</h3>
-                    <p>Trajes a la medida con atención eficiente y centrada en las necesidades de cada cliente.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="service-img-wrapper">
-                        <img src="service_scouting.png" alt="Scouting">
-                    </div>
-                    <h3>Scouting</h3>
-                    <p>Búsqueda continua de talento para asegurar los mejores asesores en el área operativa.</p>
-                </div>
-            </div>
+    <!-- Journey Wrapper Container for Scroll Path Anim -->
+    <div id="journey-container" class="journey-container">
+        <!-- Interactive Scroll Path -->
+        <div class="scroll-path-container">
+            <svg id="scroll-svg" class="scroll-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="scroll-path-bg" class="scroll-path-bg" stroke="rgba(255, 255, 255, 0.05)" stroke-width="3" />
+                <path id="scroll-path-active" class="scroll-path-active" stroke="var(--accent-color)"
+                    stroke-width="3" />
+            </svg>
+            <div id="scroll-ball" class="scroll-ball"></div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section services">
-        <div id="chart-container"></div>
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <div class="divider"></div>
-            </div>
-
-            <div class="services-list">
-                <div class="service-item row">
-                    <div class="service-text">
-                        <h3>Administración de Activos</h3>
-                        <p>Gestión integral de carteras, optimizando la recuperación y manteniendo la relación con los
-                            clientes. Utilizamos estrategias basadas en datos para maximizar el retorno.</p>
-                        <a href="#contact" class="btn-link">Saber más &rarr;</a>
-                    </div>
-                    <div class="service-img">
-                        <!-- Abstract shape or placeholder if no image -->
-                        <img src="service_valuation.png" alt="Valuación de Cartera" class="service-full-img">
-                    </div>
-                </div>
-                <div class="service-item row reverse">
-                    <div class="service-text">
-                        <h3>Cobranza Judicial y Extrajudicial</h3>
-                        <p>Expertos en la recuperación de créditos en todas sus etapas. Nuestro equipo legal y de
-                            negociación asegura resultados efectivos respetando el marco legal.</p>
-                        <a href="#contact" class="btn-link">Saber más &rarr;</a>
-                    </div>
-                    <div class="service-img">
-                        <img src="service_legal.png" alt="Cobranza Judicial" class="service-full-img">
-                    </div>
-                </div>
-                <div class="service-item row">
-                    <div class="service-text">
-                        <h3>Contact Center</h3>
-                        <p>Infraestructura robusta para campañas masivas, atención a clientes y seguimiento de cuentas.
-                            Tecnología de marcación predictiva y monitoreo en tiempo real.</p>
-                        <a href="#contact" class="btn-link">Saber más &rarr;</a>
-                    </div>
-                    <div class="service-img">
-                        <img src="service_contact_center.png" alt="Contact Center" class="service-full-img">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action / Team -->
-    <section id="team" class="section cta-section">
-        <div class="container text-center">
-            <h2>¿Buscas crecer profesionalmente?</h2>
-            <p>Únete a nuestro equipo y desarrolla tu potencial en un ambiente dinámico y desafiante.</p>
-            <a href="#contact" class="btn btn-primary margin-top">Únete a nosotros</a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <h2>Contáctanos</h2>
-                    <p>Estamos listos para resolver tus dudas y ofrecerte la mejor solución.</p>
-
-                    <div class="info-item">
-                        <h4>Dirección</h4>
-                        <p>Andes #10 Col. Los Alpes,<br>Alc. Alvaro Obregón, CDMX</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Teléfono</h4>
-                        <p><a href="tel:5563931932">55 6393 1932</a></p>
-                    </div>
-                    <div class="info-item">
-                        <h4>Email</h4>
-                        <p><a href="mailto:info@solutera.com">info@solutera.com</a></p>
-                    </div>
+        <!-- About Section -->
+        <section id="about-us" class="section about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nuestra Empresa</h2>
+                    <div class="divider"></div>
+                    <p class="section-subtitle">Más de una década de experiencia gestionando activos y brindando
+                        soluciones financieras.</p>
                 </div>
 
-                <div class="contact-form-box">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Nombre *</label>
-                            <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                <div class="timeline-journey">
+                    <div class="feature-card journey-milestone" data-side="left">
+                        <div class="service-img-wrapper anim-container">
+                            <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="25" y="30" width="50" height="45" rx="6" stroke="var(--accent-color)"
+                                    stroke-width="2.5" />
+                                <path d="M40 30V20c0-2 2-4 4-4h12c2 0 4 2 4 4v10" stroke="white" />
+                                <circle cx="50" cy="52" r="10" stroke="white" stroke-dasharray="4 2"
+                                    class="spin-slow" />
+                                <!-- Floating coin rising -->
+                                <circle cx="50" cy="52" r="4" fill="var(--accent-color)" class="floating-coin" />
+                                <path d="M48 50h4M50 48v8" stroke="white" stroke-width="1.5"
+                                    class="floating-coin-plus" />
+                                <!-- Success graph bars coming out -->
+                                <line x1="33" y1="65" x2="33" y2="50" stroke="rgba(255,255,255,0.4)" stroke-width="2.5"
+                                    class="bar-grow-1" />
+                                <line x1="67" y1="65" x2="67" y2="45" stroke="var(--accent-color)" stroke-width="2.5"
+                                    class="bar-grow-2" />
+                            </svg>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                        <h3>Administración y Recuperación</h3>
+                        <p>Desde 2009 gestionando un portafolio propio de más de 850,000 activos con éxito comprobado.
+                        </p>
+                    </div>
+                    <div class="feature-card journey-milestone" data-side="right">
+                        <div class="service-img-wrapper anim-container">
+                            <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="20" y="18" width="60" height="16" rx="3" stroke="white" stroke-width="2" />
+                                <rect x="20" y="42" width="60" height="16" rx="3" stroke="white" stroke-width="2" />
+                                <rect x="20" y="66" width="60" height="16" rx="3" stroke="white" stroke-width="2" />
+                                <!-- Server Blinking Indicators -->
+                                <circle cx="30" cy="26" r="2.5" fill="var(--accent-color)" class="blink-1" />
+                                <circle cx="38" cy="26" r="2.5" fill="#22c55e" class="blink-2" />
+                                <circle cx="30" cy="50" r="2.5" fill="var(--accent-color)" class="blink-2" />
+                                <circle cx="38" cy="50" r="2.5" fill="#22c55e" class="blink-3" />
+                                <circle cx="30" cy="74" r="2.5" fill="var(--accent-color)" class="blink-3" />
+                                <circle cx="38" cy="74" r="2.5" fill="#22c55e" class="blink-1" />
+                                <!-- Network circuitry lines on the right side -->
+                                <path d="M60 26h12v24H60M72 50h8" stroke="rgba(255,255,255,0.35)"
+                                    stroke-linecap="round" />
+                                <circle cx="80" cy="50" r="3" fill="var(--accent-color)" class="pulse" />
+                                <!-- Data loading lines -->
+                                <line x1="48" y1="26" x2="68" y2="26" stroke="rgba(255,255,255,0.2)"
+                                    stroke-dasharray="3 3" />
+                                <line x1="48" y1="50" x2="68" y2="50" stroke="rgba(255,255,255,0.2)"
+                                    stroke-dasharray="3 3" />
+                                <line x1="48" y1="74" x2="68" y2="74" stroke="rgba(255,255,255,0.2)"
+                                    stroke-dasharray="3 3" />
+                                <circle cx="58" cy="50" r="2" fill="white" class="data-packet" />
+                            </svg>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Mensaje</label>
-                            <textarea id="message" name="message" rows="4"
-                                placeholder="¿Cómo podemos ayudarte?"></textarea>
+                        <h3>Infraestructura</h3>
+                        <p>Tecnología de punta capaz de procesar tareas simultáneas y soportar hasta 2,500 usuarios.</p>
+                    </div>
+                    <div class="feature-card journey-milestone" data-side="left">
+                        <div class="service-img-wrapper anim-container">
+                            <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M50 15c15 0 25 5 25 15v25c0 15-10 25-25 30C35 80 25 70 25 55V30c0-10 10-15 25-15z"
+                                    stroke="white" stroke-width="2.5" />
+                                <path d="M40 50l7 7 15-15" stroke="var(--accent-color)" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="3" class="draw-check" />
+                                <!-- Laser scanning line -->
+                                <line x1="28" y1="30" x2="72" y2="30" stroke="var(--accent-color)" stroke-width="2"
+                                    class="laser-scan" />
+                                <!-- Orbiting nodes -->
+                                <circle cx="50" cy="50" r="34" stroke="rgba(255,107,0,0.15)" stroke-dasharray="5 15"
+                                    class="spin-slow" />
+                                <circle cx="16" cy="50" r="3" fill="white" class="pulse" />
+                                <circle cx="84" cy="50" r="3" fill="var(--accent-color)" class="pulse" />
+                            </svg>
                         </div>
-                        <button type="submit" class="btn btn-full">Enviar Mensaje</button>
-                    </form>
+                        <h3>Análisis y Supervisión</h3>
+                        <p>Estricto control de seguridad y desempeño para evitar malversación de datos y garantizar
+                            confianza.</p>
+                    </div>
+                    <div class="feature-card journey-milestone" data-side="right">
+                        <div class="service-img-wrapper anim-container">
+                            <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 78h60" stroke="white" stroke-linecap="round" stroke-width="2.5" />
+                                <!-- Bar charts that animate scaleY -->
+                                <rect x="25" y="55" width="8" height="23" rx="1.5" fill="rgba(255,255,255,0.15)"
+                                    class="bar-1" />
+                                <rect x="40" y="40" width="8" height="38" rx="1.5" fill="rgba(255,255,255,0.25)"
+                                    class="bar-2" />
+                                <rect x="55" y="28" width="8" height="50" rx="1.5" fill="rgba(255,255,255,0.35)"
+                                    class="bar-3" />
+                                <rect x="70" y="15" width="8" height="63" rx="1.5" fill="var(--accent-color)"
+                                    class="bar-4" />
+                                <!-- Growth trend line -->
+                                <path d="M29 55l15-15 15-12 15-13" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="draw-line-chart" />
+                                <circle cx="74" cy="15" r="4" fill="var(--accent-color)" class="pulse" />
+                                <!-- Sparkles/Grid nodes -->
+                                <circle cx="44" cy="40" r="2.5" fill="white" class="pulse" />
+                                <circle cx="59" cy="28" r="2.5" fill="white" class="pulse" />
+                            </svg>
+                        </div>
+                        <h3>Inversión</h3>
+                        <p>Alianzas estratégicas proveyendo capital humano, tecnología y know-how especializado.</p>
+                    </div>
+                    <div class="feature-card journey-milestone" data-side="left">
+                        <div class="service-img-wrapper anim-container">
+                            <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <!-- User Icon -->
+                                <circle cx="50" cy="38" r="14" stroke="white" stroke-width="2.5" />
+                                <path d="M26 76c0-13 10-18 24-18s24 5 24 18" stroke="white" stroke-width="2.5" />
+                                <!-- Glowing connection star -->
+                                <circle cx="50" cy="48" r="3" fill="var(--accent-color)" class="pulse" />
+                                <!-- Concentric connection ripples -->
+                                <circle cx="50" cy="48" r="30" stroke="rgba(255,107,0,0.2)" stroke-width="1.5"
+                                    class="ripple-1" />
+                                <circle cx="50" cy="48" r="40" stroke="rgba(255,255,255,0.1)" stroke-width="1"
+                                    class="ripple-2" />
+                                <!-- Spinning outer dial -->
+                                <circle cx="50" cy="48" r="44" stroke="var(--accent-color)" stroke-dasharray="6 8"
+                                    class="spin-slow" />
+                            </svg>
+                        </div>
+                        <h3>Servicio Personalizado</h3>
+                        <p>Trajes a la medida con atención eficiente y centrada en las necesidades de cada cliente.</p>
+                    </div>
+                    <div class="feature-card journey-milestone" data-side="right">
+                        <div class="service-img-wrapper anim-container">
+                            <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="50" cy="50" r="38" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+                                <circle cx="50" cy="50" r="26" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" />
+                                <circle cx="50" cy="50" r="12" stroke="var(--accent-color)" stroke-dasharray="3 3"
+                                    class="spin-slow" />
+                                <path d="M50 8v84M8 50h84" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4 4" />
+                                <!-- Radar Line -->
+                                <line x1="50" y1="50" x2="77" y2="23" stroke="var(--accent-color)" stroke-width="2"
+                                    class="sweep-radar-line" />
+                                <!-- Blinking Target Nodes -->
+                                <circle cx="70" cy="30" r="4.5" fill="#22c55e" class="radar-blip-1" />
+                                <circle cx="35" cy="65" r="3.5" fill="var(--accent-color)" class="radar-blip-2" />
+                                <circle cx="65" cy="70" r="3" fill="white" class="radar-blip-3" />
+                            </svg>
+                        </div>
+                        <h3>Scouting</h3>
+                        <p>Búsqueda continua de talento para asegurar los mejores asesores en el área operativa.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <div id="chart-container"></div>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="services-list">
+                    <div class="service-item row journey-milestone" data-side="center">
+                        <div class="service-text">
+                            <h3>Administración de Activos</h3>
+                            <p>Gestión integral de carteras, optimizando la recuperación y manteniendo la relación con
+                                los clientes. Utilizamos estrategias basadas en datos para maximizar el retorno.</p>
+                            <a href="#contact" class="btn-link">Saber más &rarr;</a>
+                        </div>
+                        <div class="service-img anim-container">
+                            <svg class="service-animation-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <!-- Grid lines -->
+                                <line x1="30" y1="40" x2="30" y2="160" stroke="rgba(255,255,255,0.1)" />
+                                <line x1="75" y1="40" x2="75" y2="160" stroke="rgba(255,255,255,0.05)"
+                                    stroke-dasharray="4 4" />
+                                <line x1="120" y1="40" x2="120" y2="160" stroke="rgba(255,255,255,0.05)"
+                                    stroke-dasharray="4 4" />
+                                <line x1="165" y1="40" x2="165" y2="160" stroke="rgba(255,255,255,0.1)" />
+                                <!-- Bottom axis -->
+                                <path d="M30 160h140" stroke="rgba(255,255,255,0.2)" stroke-linecap="round" />
+                                <!-- Area fill under chart -->
+                                <path d="M30 140c20-10 30-50 50-50s20 30 40 10 30-60 50-60v80H30z"
+                                    fill="url(#services-gradient-1)" class="chart-area-fade" />
+                                <!-- Target Trend Line (Dotted) -->
+                                <path d="M30 150c30-15 60-35 90-55s30-25 50-40" stroke="rgba(255,255,255,0.3)"
+                                    stroke-dasharray="5 5" stroke-linecap="round" class="chart-target-line" />
+                                <!-- Main recovery trend line -->
+                                <path d="M30 140c20-10 30-50 50-50s20 30 40 10 30-60 50-60" stroke="var(--accent-color)"
+                                    stroke-linecap="round" stroke-linejoin="round" class="chart-line-draw" />
+                                <!-- Pulsing Nodes -->
+                                <circle cx="80" cy="90" r="4.5" fill="white" class="pulse" />
+                                <circle cx="170" cy="40" r="6.5" fill="var(--accent-color)" class="pulse-node" />
+                                <defs>
+                                    <linearGradient id="services-gradient-1" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="var(--accent-color)" stop-opacity="0.2" />
+                                        <stop offset="100%" stop-color="var(--accent-color)" stop-opacity="0" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-item row reverse journey-milestone" data-side="center">
+                        <div class="service-text">
+                            <h3>Cobranza Judicial y Extrajudicial</h3>
+                            <p>Expertos en la recuperación de créditos en todas sus etapas. Nuestro equipo legal y de
+                                negociación asegura resultados efectivos respetando el marco legal.</p>
+                            <a href="#contact" class="btn-link">Saber más &rarr;</a>
+                        </div>
+                        <div class="service-img anim-container">
+                            <svg class="service-animation-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <!-- Strike block the gavel lands on -->
+                                <rect class="gavel-block" x="70" y="60" width="34" height="8" rx="4"
+                                    fill="rgba(255,255,255,0.18)" stroke="none" />
+                                <!-- Impact sparks (flash in sync with the hit) -->
+                                <g class="gavel-impact">
+                                    <line x1="87" y1="55" x2="87" y2="47" stroke="var(--accent-color)" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="79" y1="57" x2="73" y2="52" stroke="var(--accent-color)" stroke-width="2"
+                                        stroke-linecap="round" />
+                                    <line x1="95" y1="57" x2="101" y2="52" stroke="var(--accent-color)" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </g>
+                                <!-- Gavel: handle + head swing together around the grip -->
+                                <g class="gavel">
+                                    <path d="M55 70l25-25" stroke="var(--accent-color)" stroke-width="5"
+                                        stroke-linecap="round" />
+                                    <rect x="60" y="28" width="40" height="19" rx="3" fill="var(--accent-color)"
+                                        transform="rotate(45 78 43)" />
+                                </g>
+
+                                <!-- Balance of Justice: stand -->
+                                <path d="M76 160 H124" stroke="white" stroke-width="4" stroke-linecap="round" />
+                                <path d="M92 152 H108 L112 160 H88 Z" fill="rgba(255,255,255,0.12)" stroke="none" />
+                                <path d="M100 85 V160" stroke="white" stroke-width="4" />
+                                <circle cx="100" cy="82" r="4" fill="var(--accent-color)" stroke="none" />
+                                <!-- Beam (tilts gently) -->
+                                <path class="scale-beam" d="M55 85 H145" stroke="white" stroke-width="4"
+                                    stroke-linecap="round" />
+                                <!-- Left pan: chains + bowl -->
+                                <g class="scale-pan-left-group">
+                                    <path d="M57 85 L42 118" stroke="rgba(255,255,255,0.45)" stroke-width="2" />
+                                    <path d="M57 85 L72 118" stroke="rgba(255,255,255,0.45)" stroke-width="2" />
+                                    <path d="M38 118 H76" stroke="var(--accent-color)" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M38 118 Q57 134 76 118" stroke="var(--accent-color)" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <circle cx="57" cy="118" r="2.5" fill="white" stroke="none" class="pulse" />
+                                </g>
+                                <!-- Right pan: chains + bowl -->
+                                <g class="scale-pan-right-group">
+                                    <path d="M143 85 L128 118" stroke="rgba(255,255,255,0.45)" stroke-width="2" />
+                                    <path d="M143 85 L158 118" stroke="rgba(255,255,255,0.45)" stroke-width="2" />
+                                    <path d="M124 118 H162" stroke="var(--accent-color)" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <path d="M124 118 Q143 134 162 118" stroke="var(--accent-color)" stroke-width="3"
+                                        stroke-linecap="round" />
+                                    <circle cx="143" cy="118" r="2.5" fill="white" stroke="none" class="pulse" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="service-item row journey-milestone" data-side="center">
+                        <div class="service-text">
+                            <h3>Contact Center</h3>
+                            <p>Infraestructura robusta para campañas masivas, atención a clientes y seguimiento de
+                                cuentas. Tecnología de marcación predictiva y monitoreo en tiempo real.</p>
+                            <a href="#contact" class="btn-link">Saber más &rarr;</a>
+                        </div>
+                        <div class="service-img anim-container">
+                            <svg class="service-animation-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor"
+                                stroke-width="3">
+                                <!-- Headband -->
+                                <path d="M60 110V90c0-25 15-40 40-40s40 15 40 40v20" stroke="white"
+                                    stroke-linecap="round" stroke-width="4" />
+                                <!-- Earcups -->
+                                <rect x="50" y="100" width="12" height="24" rx="5" fill="var(--accent-color)"
+                                    stroke="var(--accent-color)" />
+                                <rect x="138" y="100" width="12" height="24" rx="5" fill="var(--accent-color)"
+                                    stroke="var(--accent-color)" />
+                                <!-- Microphone -->
+                                <path d="M56 115c10 20 25 25 34 25" stroke="white" stroke-linecap="round"
+                                    stroke-width="4" />
+                                <!-- Floating incoming messages/data packets -->
+                                <circle cx="25" cy="55" r="4.5" fill="var(--accent-color)" class="chat-particle-1" />
+                                <circle cx="175" cy="65" r="3.5" fill="#22c55e" class="chat-particle-2" />
+                                <!-- Ripple circles from headset -->
+                                <circle cx="100" cy="100" r="50" stroke="rgba(255,255,255,0.05)" class="sound-ripple" />
+                                <!-- Waveforms -->
+                                <path d="M165 90c10 10 10 30 0 40" stroke="var(--accent-color)" stroke-linecap="round"
+                                    class="soundwave-1" />
+                                <path d="M178 80c18 15 18 45 0 60" stroke="var(--accent-glow)" stroke-linecap="round"
+                                    class="soundwave-2" stroke-width="2" />
+                                <path d="M35 90c-10 10-10 30 0 40" stroke="var(--accent-color)" stroke-linecap="round"
+                                    class="soundwave-1" />
+                                <path d="M22 80c-18 15-18 45 0 60" stroke="var(--accent-glow)" stroke-linecap="round"
+                                    class="soundwave-2" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action / Team -->
+        <section id="team" class="section cta-section">
+            <div class="container text-center">
+                <h2>¿Buscas crecer profesionalmente?</h2>
+                <p>Únete a nuestro equipo y desarrolla tu potencial en un ambiente dinámico y desafiante.</p>
+                <a href="#contact" class="btn btn-primary margin-top">Únete a nosotros</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h2>Contáctanos</h2>
+                        <p>Estamos listos para resolver tus dudas y ofrecerte la mejor solución.</p>
+
+                        <div class="info-item">
+                            <h4>Dirección</h4>
+                            <p>Andes #10 Col. Los Alpes,<br>Alc. Alvaro Obregón, CDMX</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Teléfono</h4>
+                            <p><a href="tel:5563931932">55 6393 1932</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@solutera.com">info@solutera.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-box">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nombre *</label>
+                                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" name="message" rows="4"
+                                    placeholder="¿Cómo podemos ayudarte?"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-full">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div> <!-- Close journey-container -->
 
     <!-- Footer -->
     <footer class="footer">
