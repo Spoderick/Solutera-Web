@@ -4,32 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutera - Soluciones en Cobranza</title>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Solutera | Soluciones en Cobranza y Administración de Activos</title>
+    <meta name="description"
+        content="Solutera es una firma independiente con cobertura nacional en México dedicada a la administración de activos, cobranza judicial y extrajudicial, y soluciones de Contact Center desde 2009.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://solutera.com.mx/">
+
+    <!-- Open Graph / Social SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Solutera">
+    <meta property="og:title" content="Solutera | Soluciones en Cobranza y Administración de Activos">
+    <meta property="og:description"
+        content="Firma independiente con cobertura nacional dedicada a maximizar el valor de sus carteras mediante estrategias efectivas de recuperación y administración de activos.">
+    <meta property="og:url" content="https://solutera.com.mx/">
+    <meta property="og:image" content="https://solutera.com.mx/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solutera | Soluciones en Cobranza y Administración de Activos">
+    <meta name="twitter:description"
+        content="Más de una década de experiencia gestionando portafolios de activos, cobranza judicial/extrajudicial y Contact Center.">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FinancialService",
+      "name": "Solutera",
+      "legalName": "Portafolios y Asesoría Financiera, S.A. de C.V.",
+      "description": "Soluciones en cobranza judicial y extrajudicial, administración de activos y Contact Center con cobertura nacional.",
+      "url": "https://solutera.com.mx/",
+      "telephone": "+52-55-6393-1932",
+      "email": "info@solutera.com.mx",
+      "foundingDate": "2009",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Andes #10, Col. Los Alpes",
+        "addressLocality": "Álvaro Obregón",
+        "addressRegion": "CDMX",
+        "postalCode": "01010",
+        "addressCountry": "MX"
+      }
+    }
+    </script>
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Raleway:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <!-- Placeholder for icons, relying on CSS for shapes if needed or font awesome if user has key, trying basic SVGs for now in code to be safe -->
 </head>
 
 <body>
-
-
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Navegación principal">
         <div class="container nav-container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Solutera Logo">
+            <a href="#home" class="logo" aria-label="Solutera - Ir al inicio">
+                <img src="logo.png" alt="Solutera Logo" width="160" height="50" fetchpriority="high" decoding="async">
             </a>
-            <button class="mobile-menu-btn" aria-label="Menu">
+            <button class="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="primary-nav-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul class="nav-menu">
+            <ul id="primary-nav-menu" class="nav-menu">
                 <li><a href="#home" class="nav-link">Inicio</a></li>
                 <li><a href="#about-us" class="nav-link">Nuestra Empresa</a></li>
                 <li><a href="#services" class="nav-link">Servicios</a></li>
@@ -37,12 +80,12 @@
                 <li><a href="#contact" class="btn-glass">Contacto</a></li>
                 <li>
                     <button id="theme-toggle" class="theme-btn" aria-label="Cambiar Tema">
-                        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <svg class="sun-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                         </svg>
-                        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        <svg class="moon-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" style="display:none;">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -55,16 +98,14 @@
 
     <!-- Hero Section -->
     <header id="home" class="hero">
-        <div class="hero-bg">
+        <div class="hero-bg" aria-hidden="true">
             <div id="waves-container"></div>
             <div class="overlay"></div>
         </div>
 
-
-
         <div class="container hero-content">
             <div class="hero-icon-wrapper animate-fade-up">
-                <img id="hero-logo-trigger" src="hero-icon.png" alt="Solutera Icon" class="hero-icon-img">
+                <img id="hero-logo-trigger" src="hero-icon.png" alt="Emblema de Solutera" class="hero-icon-img" width="80" height="80" fetchpriority="high" decoding="async">
             </div>
             <h1 class="animate-fade-up delay-1">
                 <span class="text-main highlight">Solutera</span>
@@ -79,9 +120,10 @@
     </header>
 
     <!-- Journey Wrapper Container for Scroll Path Anim -->
+    <main id="main-content">
     <div id="journey-container" class="journey-container">
         <!-- Interactive Scroll Path -->
-        <div class="scroll-path-container">
+        <div class="scroll-path-container" aria-hidden="true">
             <svg id="scroll-svg" class="scroll-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path id="scroll-path-bg" class="scroll-path-bg" stroke="rgba(255, 255, 255, 0.05)" stroke-width="3" />
                 <path id="scroll-path-active" class="scroll-path-active" stroke="var(--accent-color)"
@@ -102,7 +144,7 @@
 
                 <div class="timeline-journey">
                     <div class="feature-card journey-milestone" data-side="left">
-                        <div class="service-img-wrapper anim-container">
+                        <div class="service-img-wrapper anim-container" data-remotion-icon="Recovery">
                             <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <rect x="25" y="30" width="50" height="45" rx="6" stroke="var(--accent-color)"
@@ -126,7 +168,7 @@
                         </p>
                     </div>
                     <div class="feature-card journey-milestone" data-side="right">
-                        <div class="service-img-wrapper anim-container">
+                        <div class="service-img-wrapper anim-container" data-remotion-icon="Infrastructure">
                             <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <rect x="20" y="18" width="60" height="16" rx="3" stroke="white" stroke-width="2" />
@@ -157,7 +199,7 @@
                         <p>Tecnología de punta capaz de procesar tareas simultáneas y soportar hasta 2,500 usuarios.</p>
                     </div>
                     <div class="feature-card journey-milestone" data-side="left">
-                        <div class="service-img-wrapper anim-container">
+                        <div class="service-img-wrapper anim-container" data-remotion-icon="Security">
                             <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path
@@ -180,7 +222,7 @@
                             confianza.</p>
                     </div>
                     <div class="feature-card journey-milestone" data-side="right">
-                        <div class="service-img-wrapper anim-container">
+                        <div class="service-img-wrapper anim-container" data-remotion-icon="Investment">
                             <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path d="M20 78h60" stroke="white" stroke-linecap="round" stroke-width="2.5" />
@@ -206,7 +248,7 @@
                         <p>Alianzas estratégicas proveyendo capital humano, tecnología y know-how especializado.</p>
                     </div>
                     <div class="feature-card journey-milestone" data-side="left">
-                        <div class="service-img-wrapper anim-container">
+                        <div class="service-img-wrapper anim-container" data-remotion-icon="CustomService">
                             <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <!-- User Icon -->
@@ -228,7 +270,7 @@
                         <p>Trajes a la medida con atención eficiente y centrada en las necesidades de cada cliente.</p>
                     </div>
                     <div class="feature-card journey-milestone" data-side="right">
-                        <div class="service-img-wrapper anim-container">
+                        <div class="service-img-wrapper anim-container" data-remotion-icon="Scouting">
                             <svg class="about-icon-svg" viewBox="0 0 100 100" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <circle cx="50" cy="50" r="38" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
@@ -269,7 +311,7 @@
                                 los clientes. Utilizamos estrategias basadas en datos para maximizar el retorno.</p>
                             <a href="#contact" class="btn-link">Saber más &rarr;</a>
                         </div>
-                        <div class="service-img anim-container">
+                        <div class="service-img anim-container" data-remotion-icon="AssetManagement">
                             <svg class="service-animation-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor"
                                 stroke-width="3">
                                 <!-- Grid lines -->
@@ -309,7 +351,7 @@
                                 negociación asegura resultados efectivos respetando el marco legal.</p>
                             <a href="#contact" class="btn-link">Saber más &rarr;</a>
                         </div>
-                        <div class="service-img anim-container">
+                        <div class="service-img anim-container" data-remotion-icon="LegalCollection">
                             <svg class="service-animation-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor"
                                 stroke-width="3">
                                 <!-- Strike block the gavel lands on -->
@@ -370,7 +412,7 @@
                                 cuentas. Tecnología de marcación predictiva y monitoreo en tiempo real.</p>
                             <a href="#contact" class="btn-link">Saber más &rarr;</a>
                         </div>
-                        <div class="service-img anim-container">
+                        <div class="service-img anim-container" data-remotion-icon="ContactCenter">
                             <svg class="service-animation-svg" viewBox="0 0 200 200" fill="none" stroke="currentColor"
                                 stroke-width="3">
                                 <!-- Headband -->
@@ -423,16 +465,16 @@
                         <p>Estamos listos para resolver tus dudas y ofrecerte la mejor solución.</p>
 
                         <div class="info-item">
-                            <h4>Dirección</h4>
+                            <h3>Dirección</h3>
                             <p>Andes #10 Col. Los Alpes,<br>Alc. Alvaro Obregón, CDMX</p>
                         </div>
                         <div class="info-item">
-                            <h4>Teléfono</h4>
+                            <h3>Teléfono</h3>
                             <p><a href="tel:5563931932">55 6393 1932</a></p>
                         </div>
                         <div class="info-item">
-                            <h4>Email</h4>
-                            <p><a href="mailto:info@solutera.com">info@solutera.com</a></p>
+                            <h3>Email</h3>
+                            <p><a href="mailto:info@solutera.com.mx">info@solutera.com.mx</a></p>
                         </div>
                     </div>
 
@@ -440,11 +482,11 @@
                         <form id="contactForm">
                             <div class="form-group">
                                 <label for="name">Nombre *</label>
-                                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                                <input type="text" id="name" name="name" autocomplete="name" required placeholder="Tu nombre">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                                <input type="email" id="email" name="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com">
                             </div>
                             <div class="form-group">
                                 <label for="message">Mensaje</label>
@@ -458,18 +500,19 @@
             </div>
         </section>
     </div> <!-- Close journey-container -->
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-logo">
-                <img src="logo.png" alt="Solutera Logo" class="footer-logo-img">
+                <img src="logo.png" alt="Solutera Logo" class="footer-logo-img" width="180" height="60" loading="lazy" decoding="async">
                 <p>Expertos en soluciones de cobranza y administración de activos.</p>
             </div>
             <div class="footer-links">
                 <a href="#home">Inicio</a>
                 <a href="#services">Servicios</a>
-                <a href="http://solutera.com/aviso-de-privacidad.html" target="_blank">Aviso de Privacidad</a>
+                <a href="aviso-de-privacidad.html">Aviso de Privacidad</a>
             </div>
             <div class="copyright">
                 <p>&copy; 2026 SOLUTERA. Todos los derechos reservados.</p>
@@ -478,14 +521,14 @@
     </footer>
 
     <!-- Success Modal -->
-    <div id="success-modal" class="modal">
+    <div id="success-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
-            <div class="modal-icon">
+            <div class="modal-icon" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
             </div>
-            <h3>¡Mensaje Enviado!</h3>
+            <h3 id="modal-title">¡Mensaje Enviado!</h3>
             <p>Gracias por contactarnos. Hemos recibido tu mensaje y nos pondremos en contacto contigo a la brevedad.
             </p>
             <button id="close-modal-btn" class="btn btn-primary">Entendido</button>

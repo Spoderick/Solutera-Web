@@ -1,5 +1,6 @@
 import { Waves } from './waves.js';
 import { ChartBackground } from './chart-background.js';
+import { mountWebsiteIcons } from './src/remotion/mountWebsiteIcons.jsx';
 import logoLightUrl from './logo.png';
 import logoDarkUrl from './logo-dark.png';
 
@@ -61,6 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Initialize Remotion Motion Graphics Icons
+    mountWebsiteIcons();
+
     // Initialize Scroll Journey
     initScrollJourney();
 });
@@ -71,8 +75,9 @@ const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
 
 mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
+    const isExpanded = mobileMenuBtn.classList.toggle('active');
     navMenu.classList.toggle('active');
+    mobileMenuBtn.setAttribute('aria-expanded', String(isExpanded));
 });
 
 // Close mobile menu when a link is clicked
@@ -80,14 +85,16 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         mobileMenuBtn.classList.remove('active');
         navMenu.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
     });
 });
 
 // Scroll Header Effect
 const navbar = document.querySelector('.navbar');
+const isSubPage = Boolean(document.querySelector('.privacy-page, .not-found-page'));
 
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 50 || isSubPage) {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');

@@ -7,13 +7,17 @@
     "dev": "vite",
     "host": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "remotion:studio": "remotion studio src/remotion/index.js",
+    "remotion:compositions": "remotion compositions src/remotion/index.js"
   },
   "devDependencies": {
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "@remotion/cli": "4.0.542",
     "d3": "^7.9.0",
+    "remotion": "4.0.542",
     "simplex-noise": "^4.0.3"
   }
 }
